@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "noImplicitAny": true,
+    "outDir": "dist"
+  },
+  "files": [
+    "src/main.ts",
+    "src/greet.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
