@@ -1,13 +1,21 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "noImplicitAny": true,
-    "outDir": "dist"
-  },
-  "files": [
-    "src/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"module": "commonjs",
+		"target": "es5",
+		"jsx": "react",
+		"baseUrl": "./src",
+		"experimentalDecorators": true,
+		"typeRoots": [
+			"./node_modules/@types"
+		]
+	},
+	"include": [
+		"./src/**/*"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }
