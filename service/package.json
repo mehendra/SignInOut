@@ -4,16 +4,24 @@
   "description": "The lambda code that will be responsible to handle all sign in and out code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": " mocha --require ts-node/register \"./src/**/__tests__/**/*.{ts,tsx}\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/aws-lambda": "0.0.10",
+    "@types/chai": "^3.5.2",
+    "@types/mocha": "^2.2.41",
     "@types/node": "7.0.5",
     "aws-sdk-typescript": "0.0.3",
+    "chai": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.7",
+    "mocha": "^3.4.2",
+    "ts-node": "^3.0.4",
     "typescript": "^2.3.3"
+  },
+  "dependencies": {
+    "mocha": "^3.4.2"
   }
 }
