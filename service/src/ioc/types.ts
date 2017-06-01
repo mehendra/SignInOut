@@ -1,28 +1,26 @@
-import { PeopleRpository } from './../repository/PeopleRepository';
-import { CardRepository } from './../repository/CardRepository';
+import { IPeopleService } from './../services/PeopleService';
+import { PeopleRpository, IPeopleRpository } from './../repository/PeopleRepository';
+import { CardRepository, ICardRepository } from './../repository/CardRepository';
 import { PeopleService } from '../services/PeopleService';
 
 export interface IserviceRepository {
-	peopleService: PeopleService
+	peopleService: (repositoryDomainModule: IRepositoryDomainModule) => IPeopleService;
 }
 
 export interface IRepositoryDomainModule {
-	cardRepository: CardRepository,
-	peopleRpository: PeopleRpository
+	cardRepository: () => ICardRepository,
+	peopleRpository: () => IPeopleRpository
 }
 
 export function RepositoryDomainModule(): IRepositoryDomainModule {
 	return {
-		cardRepository: new CardRepository(),
-		peopleRpository: new PeopleRpository()
+		cardRepository: () => new CardRepository(),
+		peopleRpository: () => new PeopleRpository()
 	}
 }
 
 export function ServiceDomainModule(): IserviceRepository {
-	let peopleRepository = RepositoryDomainModule().peopleRpository;
-	let cardRepository = RepositoryDomainModule().cardRepository;
-
 	return {
-		peopleService: new PeopleService(RepositoryDomainModule())
+		peopleService: () => new PeopleService(RepositoryDomainModule())
 	};
 };

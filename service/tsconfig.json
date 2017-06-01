@@ -8,6 +8,9 @@
 		"jsx": "react",
 		"baseUrl": "./src",
 		"experimentalDecorators": true,
+		"lib": [
+			"es2015"
+		],
 		"typeRoots": [
 			"./node_modules/@types"
 		]

@@ -9,9 +9,9 @@ import { ServiceDomainModule } from './ioc/types';
 //console.log('ggggg');
 
 let blah: IPeopleService;
-blah = ServiceDomainModule().peopleService;
+//blah = ServiceDomainModule().peopleService();
 
 
 console.log(sayHello("TypeScript"));
-console.log(blah.getPerson('ddd'));
+console.log(blah.getPersonByCardId('ddd'));
 //console.log(peopleService.GetPerson('ddd'));
